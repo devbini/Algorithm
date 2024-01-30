@@ -2,11 +2,10 @@
 
 using namespace std;
 
-int main()
-{
-    int a, b;
-    cin >> a >> b;
-    cout << a * b;
+int main() {
+	int A, B;
 
-    return 0;
+	cin >> A >> B;
+
+	cout << A * B;
 }
