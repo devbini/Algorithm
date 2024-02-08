@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <cmath>
+#include <vector>
 using namespace std;
 
 int main()
@@ -9,43 +9,13 @@ int main()
 	cin.tie(NULL);
 	cout.tie(NULL);
 
+	vector<int> sumdata = { 3,3,3,4,4,4,5,5,5,6,6,6,7,7,7,8,8,8,8,9,9,9,10,10,10,10 };
+
 	string A;
 	cin >> A;
 
 	int sum = 0;
-
-	for (char i : A)
-	{
-		if (i >= 80) // PQRS TUV WXYZ
-		{
-			switch (i - 80)
-			{
-			case 0:
-			case 1:
-			case 2:
-			case 3:
-				sum += 8;
-				break;
-
-			case 4:
-			case 5:
-			case 6:
-				sum += 9;
-				break;
-
-			case 7:
-			case 8:
-			case 9:
-			case 10:
-				sum += 10;
-				break;
-			}
-		}
-		else 
-		{
-			sum += 2 + int(ceil(double(i - 64) / 3.0f));
-		}
-	}
+	for (char i : A) sum += sumdata[i - 65];
 
 	cout << sum;
 }
